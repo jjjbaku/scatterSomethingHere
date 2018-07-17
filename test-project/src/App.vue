@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-    something changed
+    <side-menu></side-menu>
+    <el-col :offset='1' :span='17' class='right-content'>
+      <router-view></router-view>
+    </el-col>
   </div>
 </template>
 
 <script>
+import sideMenu from '@/layout/side-menu'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    sideMenu
+  }
 }
 </script>
 
@@ -17,8 +23,13 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2a3c4e;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+}
+
+.right-content {
+  /* text-align: center; */
+  padding-top: 10px;
 }
 </style>
